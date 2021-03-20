@@ -1,0 +1,7 @@
+.main {
+    @apply container mx-auto py-6 font-sans;
+}
+
+.title {
+    @apply text-5xl text-center;
+}
