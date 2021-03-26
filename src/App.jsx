@@ -12,21 +12,23 @@ function App() {
   };
 
   return (
-    <div className="main">
+    <div className="main h-screen">
       <h1 className="title">Socket.IO Test!</h1>
-      <div className="p-8 m-32 border-primary-200 border-4 rounded-3xl">
-        <Messages messages={messages} />
-        <input
-          type="text"
-          placeholder="Enter your text"
-          className="border-gray-400 w-1/2 border-2 rounded-md p-1 block mx-auto"
-          onChange={(e) => setCurrentMessage(e.target.value)}
-          value={currentMessage}
+      <div className="p-8 m-16 border-primary-200 border-4 rounded-3xl h-5/6">
+        <Messages
+          messages={messages}
+          className="h-5/6 border-gray-400 border-2 overflow-hidden overflow-y-scroll bg-gradient-to-b from-white to-primary-200"
         />
-
-        <div className="text-center p-4">
+        <div className="mt-4 w-full flex">
+          <textarea
+            type="text"
+            placeholder="Enter your text"
+            className=" p-1 w-10/12 border-gray-400 border-2"
+            onChange={(e) => setCurrentMessage(e.target.value)}
+            value={currentMessage}
+          />
           <button
-            className="btn-primary"
+            className="w-2/12 btn-primary"
             onClick={() => addMessage(currentMessage)}
           >
             Send
